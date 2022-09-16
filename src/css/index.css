@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar{
+  background-color: #111111;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #DB0F97;
+  width: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+.bg-radial-light {
+  background: radial-gradient(circle, #F2EEE8, #ECE8E1);
+}
+
+.bg-radial-dark {
+  background: radial-gradient(circle, #161616, #111111);
+}
+
+@layer components {  
+  /* --- UTILS AND UI --- */
+  
+  /* --- LAYOUT -- */
+  /* container */
+  .container-flex {
+    @apply flex justify-center items-center;
+  }
+
+  .container-flex-l {
+    @apply flex justify-start items-center;
+  }
+
+  .container-flex-r {
+    @apply flex justify-end items-center;
+  }
+
+  /* vertical container */
+  .container-flex-col {
+    @apply flex flex-col justify-center items-center;
+  }
+
+  .container-flex-col-t {
+    @apply flex flex-col justify-start items-center;
+  }
+
+  .container-flex-col-b {
+    @apply flex flex-col items-center justify-end;
+  }
+  
+  /* TYPHOGRAPHY */
+  .paragraph {
+    @apply mb-3 font-light;
+  }
+
+  .text {
+    @apply font-boska font-medium
+  }
+
+  .header{
+    @apply font-semibold tracking-widest leading-none font-melodrama
+  }
+
+}
+
+/* Color  */
+
+/* TODO : FIX SOME CONTAINER CLASSES, SECTION CLASSES, PARAGRAPH AND ANOTHER TYPOGRAPHY */
