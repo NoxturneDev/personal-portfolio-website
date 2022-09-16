@@ -62,15 +62,15 @@
   }
 
   .header{
-    @apply font-semibold tracking-widest leading-none font-melodrama
+    @apply font-semibold tracking-wider leading-none font-melodrama
   }
 
   .header-xl{
-    @apply header font-bold text-[20rem] text-dark-300
+    @apply header font-medium text-[5rem] text-dark-300
   }
 
   .header-2xl{
-    @apply header font-bold text-[30rem] text-dark-300
+    @apply header font-medium text-[15rem] text-dark-300
   }
 }
 

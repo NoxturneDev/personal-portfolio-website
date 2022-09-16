@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { Container } from './layout/Container'
+import { Container } from './Container'
 
 function Sphere({ children, customClass, size = 400}) {
     const [deg, setDeg] = useState(70)
