@@ -1,0 +1,64 @@
+// COLOR VARIABLE
+$dark-100: #282828; 
+$dark-200: #1E1E1E; 
+$dark-300: #161616; 
+$dark-400: #111111; 
+$light-100: #FBF8F3; 
+$light-200: #F2EEE8; 
+$light-300: #ECE8E1; 
+$light-400: #D8D4CD; 
+
+
+// CSS BREAKPOINT 
+$phoneBreakpoint : 450px;
+$tabletBreakpoint :  768px;
+$laptop : 992px;
+$dekstop : 1200px;
+
+// FONT STYLE
+$poppins : 'Poppins', sans-serif;
+$montserrat : 'Montserrat', sans-serif;
+
+// FONT WEIGHT
+$bold : 700;
+$semibold : 500;
+$regular : 400;
+$light : 300;
+$lightest : 200;
+
+// BORDER RADIUS
+$borderRadiusSmall : 12px;
+$borderRadiusFull: 100%;
+
+
+// MARGIN
+$marginMedium : 2rem;
+$marginSmall : 1rem;
+$marginBig : 3.5rem;
+$marginLarge : 6rem;
+$marginSuperLarge : 12rem;
+
+// PADDING
+$paddingMedium : 1.5rem;
+$paddingSmall : 0.5rem;
+$paddingBig : 3.5rem;
+$paddingLarge : 5rem;
+
+// SMOOTH SHADOW
+$lightSmoothShadow :  0px -2px 41px rgba(64, 61, 119, 0.18), 0px -0.250431px 5.13384px rgba(56, 53, 116, 0.085);
+
+// OTHERS
+$debug : 1px solid red;
+
+// IMAGE SIZE 
+// ON DESKTOP
+$deskImgMax : 14.5rem;
+$deskImgMin : 10rem;
+
+// ON PHONE
+
+// minimun
+$phoneImgMin : 4rem;
+// maximum
+$phoneImgMax : 8rem;
+

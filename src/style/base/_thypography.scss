@@ -1,0 +1,61 @@
+* {
+    font-family: $poppins;
+    line-height: 120%;
+}
+
+
+// FLUID FONTS FUNCTIONS 
+// Inspired by CSS TRICKS and mike riethmuller typography function
+
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+  
+@mixin fluidFont($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    font-size: $min-font-size;
+    @media screen and (min-width: $min-vw) {
+      font-size: calc(#{$min-font-size} + #{stripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)}));
+    }
+    @media screen and (min-width: $max-vw) {
+      font-size: $max-font-size;
+    }
+}
+
+
+$min-vw : 400px;
+$max-vw : 1400px;
+$min-font : 13px;
+$max-font : 16px;
+$headerScale : 1.4;
+
+
+html{
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+h1{
+    font-size: $headerScale*$headerScale*$headerScale*1rem;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+h2{
+    font-size: $headerScale*$headerScale*1rem!important;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+h3{
+    font-size: $headerScale*1rem!important;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+@mixin smallerfont(){
+    @include fluidFont($min-vw, $max-vw, 12px, 14px)
+}
+
+@mixin biggerfont(){
+    @include fluidFont($min-vw, $max-vw, 14px, 18px)
+}
+
+@mixin customfont($min, $max){
+    @include fluidFont($min-vw, $max-vw, $min, $max)
+}

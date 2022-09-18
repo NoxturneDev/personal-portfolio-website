@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent !important;
+}
+* :focus {
+  outline: 0 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  background-color: #F2EEE8;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #161616;
+  width: 10px;
+  height: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  line-height: 120%;
+}
+
+html {
+  font-size: 13px;
+}
+@media screen and (min-width: 400px) {
+  html {
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
+  }
+}
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+h1 {
+  font-size: 2.744rem;
+  font-size: 13px;
+}
+@media screen and (min-width: 400px) {
+  h1 {
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
+  }
+}
+@media screen and (min-width: 1400px) {
+  h1 {
+    font-size: 16px;
+  }
+}
+
+h2 {
+  font-size: 1.96rem !important;
+  font-size: 13px;
+}
+@media screen and (min-width: 400px) {
+  h2 {
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
+  }
+}
+@media screen and (min-width: 1400px) {
+  h2 {
+    font-size: 16px;
+  }
+}
+
+h3 {
+  font-size: 1.4rem !important;
+  font-size: 13px;
+}
+@media screen and (min-width: 400px) {
+  h3 {
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
+  }
+}
+@media screen and (min-width: 1400px) {
+  h3 {
+    font-size: 16px;
+  }
+}
+
+.bg-radial-light {
+  background: radial-gradient(circle, #FBF8F3, #F2EEE8);
+}
+
+.bg-radial-dark {
+  background: radial-gradient(circle, #1E1E1E, #111111);
+}/*# sourceMappingURL=main.css.map */

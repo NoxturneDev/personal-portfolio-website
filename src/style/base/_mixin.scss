@@ -1,0 +1,98 @@
+// ALL MIXIN
+// POSITION MIXIN
+@mixin centerElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin leftAlignElement {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin rightAlignElement {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin overlay($position) {
+    position: $position;
+    overflow: hidden;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+// BACKGROUND IMAGE
+@mixin backgroundContain($url) {
+    background: url($url);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin backgroundCover($url) {
+    background: url($url);
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin dropShadow() {
+    filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09))
+        drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497))
+        drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+}
+
+@mixin insetShadow() {
+    box-shadow: -7px 1px 66px -45px rgba(91,81,143,0.75) inset;
+}
+
+
+@mixin dropShadow2() {
+    box-shadow: 0 7.2px 27.3px -22px rgba(91, 81, 143, 0.5), 0 7.6px 33.1px -22px rgba(91, 81, 143, 0.159),
+    0 12px 53px -22px rgba(91, 81, 143, 0.129);
+}
+
+// 3D IMAGE ROTATING
+@mixin imageWrapper() {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+@mixin imageGallery($translateZ) {
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ($translateZ);
+}
+
+@mixin imageGallerySquare($translateZ) {
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ($translateZ);
+}
+
+@mixin imageGalleryXAxis($translateZ) {
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateX(calc(var(--i) * 45deg)) translateZ($translateZ);
+}
+
+@mixin wrapper3DSquare() {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+@mixin dimension3DSquare($translateZ) {
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ($translateZ);
+}
