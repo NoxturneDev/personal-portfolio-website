@@ -309,25 +309,41 @@ h2 {
   background-color: #161616;
   width: 100vw;
   height: 100vw;
+  padding: 2em 1em;
 }
 
-.nav-sphere-section {
+.nav-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 2em;
+}
+.nav-header .header {
+  flex-grow: 1;
+  color: #F2EEE8;
+}
+
+.nav-section-wrapper {
+  flex-grow: 1;
+  width: 100%;
+}
+.nav-section-wrapper .nav-sphere-section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 50%;
 }
-
-.nav-links-section {
+.nav-section-wrapper .nav-links-section {
   flex-grow: 1;
 }
-.nav-links-section ul {
+.nav-section-wrapper .nav-links-section ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.nav-links-section ul .nav-links {
+.nav-section-wrapper .nav-links-section ul .nav-links {
   font-size: 5rem;
   font-family: "Melodrama", sans-serif;
   font-weight: bold;
@@ -337,7 +353,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
 }
-.nav-links-section ul .nav-links a {
+.nav-section-wrapper .nav-links-section ul .nav-links a {
   color: #ECE8E1;
 }
 
