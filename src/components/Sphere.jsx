@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { Container } from './Container'
 
-function Sphere({ children, customClass, size = 400}) {
+function Sphere({ children, size = 400}) {
     const [deg, setDeg] = useState(70)
     const sphere = useRef(null)
 
@@ -10,6 +10,7 @@ function Sphere({ children, customClass, size = 400}) {
         const scroll = window.scrollY
 
         setDeg(scroll)
+        console.log(scroll)
     }
 
     // useEffect(() => {
@@ -23,10 +24,7 @@ function Sphere({ children, customClass, size = 400}) {
     return (
         <div
             ref={sphere}
-            className={`w-[500px] h-[500px] rounded-full shadow-md ${customClass}`}
-            style={{
-                background: `linear-gradient(${deg}deg, #282828, #161616`
-            }}
+            className="sphere"
         >
             {children}
         </div>

@@ -1,23 +1,29 @@
 // COLOR VARIABLE
-$dark-100: #282828; 
-$dark-200: #1E1E1E; 
-$dark-300: #161616; 
-$dark-400: #111111; 
-$light-100: #FBF8F3; 
-$light-200: #F2EEE8; 
-$light-300: #ECE8E1; 
-$light-400: #D8D4CD; 
+$dark-100: #282828;
+$dark-200: #1E1E1E;
+$dark-300: #161616;
+$dark-400: #111111;
+$light-100: #FBF8F3;
+$light-200: #F2EEE8;
+$light-300: #ECE8E1;
+$light-400: #D8D4CD;
+
+// GRADIENT COLOR
+$gradient-light: radial-gradient(circle, $light-100, $light-200);
+$gradient-dark: radial-gradient(circle, $dark-200, $dark-400);
 
 
 // CSS BREAKPOINT 
 $phoneBreakpoint : 450px;
-$tabletBreakpoint :  768px;
+$tabletBreakpoint : 768px;
 $laptop : 992px;
 $dekstop : 1200px;
 
 // FONT STYLE
-$poppins : 'Poppins', sans-serif;
-$montserrat : 'Montserrat', sans-serif;
+$boska : 'Boska',
+sans-serif;
+$melodrama : 'Melodrama',
+sans-serif;
 
 // FONT WEIGHT
 $bold : 700;
@@ -45,7 +51,8 @@ $paddingBig : 3.5rem;
 $paddingLarge : 5rem;
 
 // SMOOTH SHADOW
-$lightSmoothShadow :  0px -2px 41px rgba(64, 61, 119, 0.18), 0px -0.250431px 5.13384px rgba(56, 53, 116, 0.085);
+$lightSmoothShadow : 0px -2px 41px rgba(64, 61, 119, 0.18),
+0px -0.250431px 5.13384px rgba(56, 53, 116, 0.085);
 
 // OTHERS
 $debug : 1px solid red;
@@ -61,4 +68,3 @@ $deskImgMin : 10rem;
 $phoneImgMin : 4rem;
 // maximum
 $phoneImgMax : 8rem;
-

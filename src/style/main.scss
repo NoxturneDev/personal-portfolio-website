@@ -5,12 +5,6 @@
 
 @import "layout/layout";
 
+@import "components/sphere";
 
-
-.bg-radial-light {
-    background: radial-gradient(circle, $light-100, $light-200);
-}
-
-.bg-radial-dark {
-    background: radial-gradient(circle, $dark-200, $dark-400);
-}
+@import "pages/main-page";

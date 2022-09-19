@@ -1,21 +1,22 @@
-// ALL MIXIN
-// POSITION MIXIN
-@mixin centerElement {
+// LAYOUT
+@mixin flex($h_align, $v_align) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $h_align;
+    align-items: $v_align;
 }
 
-@mixin leftAlignElement {
+@mixin flexCol($h_align, $v_align){
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: $v_align;
+    align-items: $h_align;
 }
 
-@mixin rightAlignElement {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+@mixin section(){
+    width: max-content;
+    max-width: 100vw;
+    height: max-content;
+    max-height: 100vh;
 }
 
 @mixin overlay($position) {
@@ -56,43 +57,4 @@
 @mixin dropShadow2() {
     box-shadow: 0 7.2px 27.3px -22px rgba(91, 81, 143, 0.5), 0 7.6px 33.1px -22px rgba(91, 81, 143, 0.159),
     0 12px 53px -22px rgba(91, 81, 143, 0.129);
-}
-
-// 3D IMAGE ROTATING
-@mixin imageWrapper() {
-    position: relative;
-    transform-style: preserve-3d;
-}
-
-@mixin imageGallery($translateZ) {
-    position: absolute;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ($translateZ);
-}
-
-@mixin imageGallerySquare($translateZ) {
-    position: absolute;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 90deg)) translateZ($translateZ);
-}
-
-@mixin imageGalleryXAxis($translateZ) {
-    position: absolute;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transform: rotateX(calc(var(--i) * 45deg)) translateZ($translateZ);
-}
-
-@mixin wrapper3DSquare() {
-    position: relative;
-    transform-style: preserve-3d;
-}
-
-@mixin dimension3DSquare($translateZ) {
-    position: absolute;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 90deg)) translateZ($translateZ);
 }

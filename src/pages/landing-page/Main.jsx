@@ -20,8 +20,6 @@ function Main() {
     i = 0
 
   const snapScroll = (e) => {
-    e.preventDefault()
-
     const y = e.deltaY,
       offset = wrapper.current.offsetWidth / 4
 
@@ -76,36 +74,30 @@ function Main() {
 
   return (
     <div
-      style={{ overflowX: 'scroll', overflowY: 'hidden', maxHeight: '100vh' }}
-      className="container-flex section overflow-y-hidden w-max"
+      className="scroll-wrapper container-flex-l"
       ref={wrapper}
     >
-      <div className='container-flex-col-t'>
-        <div>
-          <h2 className='header' >welcome</h2>
+      {/* TODO : turn into page components later */}
+      <div className="container-flex-col page-wrapper">
+        <div className="page-header">
+          <h1>HEADER</h1>
         </div>
-        <div className='container-flex-r'>
-          <div className=''>
-            <motion.h1
-              className='header-xl' ref={text}
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "tween", duration: 0.5, ease: "easeOut" }}
-            >
-              Hi, Welcome!
-            </motion.h1>
-            <motion.h1 className='text-[4.5rem] font-light font-melodrama'
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "tween", duration: 0.5, ease: "easeOut" }}
-            >
-              Im Galih Adhi Kusuma!
-            </motion.h1>
+        <div className="page-content welcome-page-content">
+          <div className="title-wrapper">
+            <h1 className='title welcome-page-title container-flex'>Hi, Welcome !</h1>
+            <h1 className='title welcome-page-subtitle container-flex'>My name is Galih Adhi Kusuma</h1>
           </div>
-          <div className=''>
-            <Sphere />
-          </div>
+          <Sphere />
         </div>
+        <div className="page-footer">
+          <h1>FOOTER</h1>
+        </div>
+      </div>
+      <div className="page-wrapper container-flex">
+        <h1>ANJAY</h1>
+      </div>
+      <div className="page-wrapper container-flex">
+        <h1>ANJAY</h1>
       </div>
     </div>
   )

@@ -1,0 +1,73 @@
+.scroll-wrapper {
+    background-color: $light-100;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+}
+
+
+
+// PAGES COMPONENTS
+.page-wrapper {
+    min-width: 100vw;
+    height: 100%;
+    padding: 1em 0.5em;
+
+    * {
+        margin: 0.5em;
+    }
+
+    .page-header {
+        @include flexCol(center, flex-start);
+
+        width: 100%;
+    }
+
+    .page-content {
+
+
+        width: 100%;
+        flex-grow: 1;
+        border: $debug;
+        padding: 0 2em;
+    }
+
+    .page-footer {
+        @include flexCol(center, flex-start);
+
+        width: 100%;
+    }
+}
+
+.welcome-page-content {
+    @include flex(flex-start, center);
+
+    .title-wrapper {
+        flex-grow: 1;
+
+
+        .welcome-page-title {
+            @include flex(flex-start, center);
+
+            font-size: 4.2rem;
+            font-family: $melodrama;
+            font-weight: 400;
+            color: $dark-300;
+        }
+
+        .welcome-page-subtitle {
+            @include flex(flex-start, center);
+
+            font-size: 3.5rem;
+            flex-grow: 1;
+            font-family: $melodrama;
+            font-weight: 200;
+            color: $dark-300;
+            width: fit-content;
+        }
+    }
+
+    .sphere {
+        margin-right: 4em;
+    }
+}

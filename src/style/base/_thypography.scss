@@ -9,14 +9,16 @@
 @function stripUnit($value) {
     @return calc($value / ($value * 0 + 1px));
 }
-  
+
 @mixin fluidFont($min-vw, $max-vw, $min-font-size, $max-font-size) {
     font-size: $min-font-size;
+
     @media screen and (min-width: $min-vw) {
-      font-size: calc(#{$min-font-size} + #{stripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)}));
+        font-size: calc(#{$min-font-size} + #{stripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)}));
     }
+
     @media screen and (min-width: $max-vw) {
-      font-size: $max-font-size;
+        font-size: $max-font-size;
     }
 }
 
@@ -28,33 +30,29 @@ $max-font : 16px;
 $headerScale : 1.4;
 
 
-html{
+html {
     @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
 }
 
-h1{
+h1 {
     font-size: $headerScale*$headerScale*$headerScale*1rem;
     @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
 }
 
-h2{
-    font-size: $headerScale*$headerScale*1rem!important;
+h2 {
+    font-size: $headerScale*$headerScale*1rem !important;
     @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
 }
 
-h3{
-    font-size: $headerScale*1rem!important;
-    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
-}
-
-@mixin smallerfont(){
+@mixin smallerfont() {
     @include fluidFont($min-vw, $max-vw, 12px, 14px)
 }
 
-@mixin biggerfont(){
+@mixin biggerfont() {
     @include fluidFont($min-vw, $max-vw, 14px, 18px)
 }
 
-@mixin customfont($min, $max){
+@mixin customfont($min, $max) {
     @include fluidFont($min-vw, $max-vw, $min, $max)
 }
+

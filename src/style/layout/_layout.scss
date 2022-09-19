@@ -1,0 +1,51 @@
+.container-flex {
+    @include flex(center, center);
+    @include section();
+}
+
+.container-flex-r {
+    @include flex(flex-end, center);
+    @include section();
+}
+
+.container-flex-l {
+    @include flex(flex-start, center);
+    @include section();
+}
+
+.container-flex-t {
+    @include flex(center, flex-start);
+    @include section();
+}
+
+.container-flex-b {
+    @include flex(center, flex-end);
+    @include section();
+}
+
+// COLUMN FLEX
+.container-flex-col {
+    @include flexCol(center, center);
+    @include section();
+}
+
+.container-flex-col-r {
+    @include flexCol(flex-end, center);
+    @include section();
+}
+
+.container-flex-col-l {
+    @include flexCol(flex-start, center);
+    @include section();
+}
+
+.container-flex-col-t {
+    @include flexCol(center, flex-start);
+    @include section();
+}
+
+.container-flex-col-b {
+    @include flexCol(center, flex-end);
+    @include section();
+}
+
