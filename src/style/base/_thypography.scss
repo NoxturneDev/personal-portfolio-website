@@ -1,6 +1,5 @@
 * {
-    font-family: $poppins;
-    line-height: 120%;
+    font-family: $boska;
 }
 
 
@@ -8,7 +7,7 @@
 // Inspired by CSS TRICKS and mike riethmuller typography function
 
 @function stripUnit($value) {
-    @return $value / ($value * 0 + 1);
+    @return calc($value / ($value * 0 + 1px));
 }
   
 @mixin fluidFont($min-vw, $max-vw, $min-font-size, $max-font-size) {
