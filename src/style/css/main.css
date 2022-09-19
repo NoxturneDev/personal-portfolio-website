@@ -274,14 +274,21 @@ h2 {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  padding: 0 2em;
+}
+.page-wrapper .page-footer .footer-link {
+  font-weight: 400;
 }
 .page-wrapper .page-footer .footer-link a {
   color: #161616;
+  font-family: "Melodrama", sans-serif;
 }
 .page-wrapper .page-footer .next-page {
+  font-size: 1.2rem;
   flex-grow: 1;
   text-align: right;
   padding-right: 2em;
+  font-weight: 500;
 }
 
 .scroll-wrapper {
