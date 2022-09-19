@@ -20,8 +20,8 @@ function Main() {
     i = 0
 
   const snapScroll = (e) => {
-    const y = e.deltaY,
-      offset = wrapper.current.offsetWidth / 4
+    const y = e.deltaY
+    // offset = wrapper.current.offsetWidth / 4
 
     wrapper.current.scrollLeft += (y / 5)
 
@@ -81,16 +81,22 @@ function Main() {
       <div className="container-flex-col page-wrapper">
         <div className="page-header">
           <h1>HEADER</h1>
+          <h1>Nav</h1>
         </div>
         <div className="page-content welcome-page-content">
           <div className="title-wrapper">
-            <h1 className='title welcome-page-title container-flex'>Hi, Welcome !</h1>
-            <h1 className='title welcome-page-subtitle container-flex'>My name is Galih Adhi Kusuma</h1>
+            <h1 className='welcome-page-title container-flex'>Hi, Welcome !</h1>
+            <h1 className='welcome-page-subtitle container-flex'>My name is Galih Adhi Kusuma</h1>
           </div>
           <Sphere />
         </div>
         <div className="page-footer">
-          <h1>FOOTER</h1>
+          <h1 className='footer-link'>
+            <a href='#' target="_blank">Do You need a website? Contact me here</a>
+          </h1>
+          <div className="footer-link next-page">
+            <a href="#">About</a>
+          </div>
         </div>
       </div>
       <div className="page-wrapper container-flex">
