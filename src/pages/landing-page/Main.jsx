@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { motion } from 'framer-motion'
-import { Section, Container, Wrapper } from '../../components/Container'
-import Sphere from '../../components/Sphere'
+import PageWrapper from '../../components/PageWrapper'
 import { textAnimation } from '../../animation/gsapAnimation'
 
 
@@ -77,34 +75,8 @@ function Main() {
       className="scroll-wrapper container-flex-l"
       ref={wrapper}
     >
-      {/* TODO : turn into page components later */}
-      <div className="container-flex-col page-wrapper">
-        <div className="page-header">
-          <h1>HEADER</h1>
-          <h1>Nav</h1>
-        </div>
-        <div className="page-content welcome-page-content">
-          <div className="title-wrapper">
-            <h1 className='welcome-page-title container-flex'>Hi, Welcome !</h1>
-            <h1 className='welcome-page-subtitle container-flex'>My name is Galih Adhi Kusuma</h1>
-          </div>
-          <Sphere />
-        </div>
-        <div className="page-footer">
-          <h1 className='footer-link'>
-            <a href='#' target="_blank">Do You need a website? Contact me here</a>
-          </h1>
-          <div className="footer-link next-page">
-            <a href="#">About</a>
-          </div>
-        </div>
-      </div>
-      <div className="page-wrapper container-flex">
-        <h1>ANJAY</h1>
-      </div>
-      <div className="page-wrapper container-flex">
-        <h1>ANJAY</h1>
-      </div>
+      <PageWrapper></PageWrapper>
+      <PageWrapper></PageWrapper>
     </div>
   )
 }
