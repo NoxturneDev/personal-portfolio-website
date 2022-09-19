@@ -49,10 +49,19 @@ h2 {
 }
 
 @mixin biggerfont() {
-    @include fluidFont($min-vw, $max-vw, 14px, 18px)
+    @include fluidFont($min-vw, $max-vw, 16px, 22px)
 }
 
 @mixin customfont($min, $max) {
     @include fluidFont($min-vw, $max-vw, $min, $max)
 }
 
+// TYPHOGRAPHY CLASSES
+.header{
+    @include biggerfont();
+
+    font-family: $boska;
+    font-weight: 600;
+    letter-spacing: 1.2px; 
+    color: $dark-300;
+}

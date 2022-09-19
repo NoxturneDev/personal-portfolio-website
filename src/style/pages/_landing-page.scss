@@ -1,3 +1,11 @@
+.scroll-wrapper {
+    background-color: $light-100;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+}
+
+
 .welcome-page-content {
     @include flex(flex-start, center);
 
