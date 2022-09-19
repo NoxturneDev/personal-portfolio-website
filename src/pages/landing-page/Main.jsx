@@ -2,20 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import PageWrapper from '../../components/PageWrapper'
 import { textAnimation } from '../../animation/gsapAnimation'
-
+import Nav from '../../components/Nav'
 
 function Main() {
   const wrapper = useRef(null)
   const text = useRef(null)
-
-  const smoothScroll = (xtarget) => {
-    // luxy.init()
-
-    // luxy.settings.wrapperSpeed = 0.02
-  }
-
-  let canScroll = true,
-    i = 0
 
   const snapScroll = (e) => {
     const y = e.deltaY
@@ -71,13 +62,16 @@ function Main() {
   }, [])
 
   return (
-    <div
-      className="scroll-wrapper container-flex-l"
-      ref={wrapper}
-    >
-      <PageWrapper></PageWrapper>
-      <PageWrapper></PageWrapper>
-    </div>
+    <>
+      <Nav />
+      <div
+        className="scroll-wrapper container-flex-l"
+        ref={wrapper}
+      >
+        <PageWrapper></PageWrapper>
+        <PageWrapper></PageWrapper>
+      </div>
+    </>
   )
 }
 
