@@ -33,7 +33,7 @@
         @include flex(flex-start, center);
 
         width: 100%;
-        padding: 0 2em;
+        padding: 0 15em 0 2em;
 
         .footer-link {
             font-weight: 400;
@@ -48,7 +48,6 @@
         .next-page {
             font-size: 1.2rem;
             text-align: right;
-            padding-right: 2em;
             font-weight: 500;
         }
 
