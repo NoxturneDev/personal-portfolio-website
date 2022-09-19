@@ -249,6 +249,7 @@ h2 {
   min-width: 100vw;
   height: 100%;
   padding: 1em 0.5em;
+  background-color: #D8D4CD;
 }
 .page-wrapper * {
   margin: 0.5em;
