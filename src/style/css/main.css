@@ -261,6 +261,9 @@ h2 {
   width: 100%;
   padding: 0 3em;
 }
+.page-wrapper .page-header .header {
+  cursor: pointer;
+}
 .page-wrapper .page-header .nav-icon {
   flex-grow: 1;
   text-align: right;
