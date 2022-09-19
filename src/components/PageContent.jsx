@@ -13,7 +13,7 @@ function PageContent() {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    transition={{ duration: 0.8, type: 'tween' }}
+                    transition={{ duration: 1, type: 'tween', ease: "easeOut" }}
                 >
                     Hi, Welcome !
                 </motion.h1>
@@ -23,7 +23,7 @@ function PageContent() {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    transition={{ duration: 0.8, type: 'tween', delay: 0.4 }}
+                    transition={{ duration: 0.8, type: 'tween', delay: 0.1, ease: "easeIn" }}
                 >
                     My name is Galih Adhi Kusuma
                 </motion.h1>
