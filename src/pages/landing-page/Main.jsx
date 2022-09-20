@@ -13,7 +13,8 @@ function Main() {
     if (snap) {
       gsap.to(wrapper.current, {
         scrollLeft: x,
-        duration: 1,
+        duration: 1.2,
+        ease: "sine.out",
         onComplete: () => {
           snap = false
 
