@@ -364,7 +364,6 @@ h2 {
 
 .nav-toggle-icon {
   position: absolute;
-  left: 0;
   right: 0;
   text-align: right;
   padding: 2em;
@@ -372,6 +371,11 @@ h2 {
 .nav-toggle-icon * {
   margin-left: 1em;
   cursor: pointer;
+}
+.nav-toggle-icon button {
+  border: none;
+  background: none;
+  outline: none;
 }
 
 .scroll-wrapper {
