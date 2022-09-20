@@ -10,11 +10,14 @@ function Nav() {
     const [toggle, setToggle] = useState(false)
     const wrapper = useRef(null)
     const links = useRef(null)
+    const iconToggle = useRef(null)
 
-    const toggleNav = (toggle) => {
-        if (toggle) {
-            console.log('toggle on')
+    const toggleAnimation = (state) => {
+        const iconToggleOn = iconToggle.current.firstChild
+        const iconToggleOff = iconToggle.current.lastChild
 
+        if (state === "entrance") {
+            // WRAPPER ANIMATION
             gsap.fromTo(wrapper.current, {
                 opacity: 0,
                 height: 0,
@@ -27,10 +30,8 @@ function Nav() {
                 borderBottomRightRadius: 0
             })
 
-            gsap.fromTo(links.current.children, {
-                opacity: 0,
-                y: -50,
-            }, {
+            // LINK ANIMATION
+            gsap.fromTo(links.current.children, { opacity: 0, y: -50, }, {
                 opacity: 1,
                 y: 0,
                 delay: 1,
@@ -40,10 +41,21 @@ function Nav() {
                 }
             })
 
-            setToggle(true)
-        } else {
-            console.log('toggle off')
+            gsap.to(iconToggleOn, {
+                opacity: 0,
+                duration: 0.8,
+            })
 
+            gsap.fromTo(iconToggleOff, {
+                opacity: 0,
+            }, {
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.4
+            })
+
+        } else if (state === "exit") {
+            // LINK ANIMATION
             gsap.to(links.current.children, {
                 opacity: 0,
                 y: -50,
@@ -53,6 +65,7 @@ function Nav() {
                 }
             })
 
+            // WRAPPER ANIMATION
             gsap.fromTo(wrapper.current, {
                 opacity: 1,
                 height: '100vh',
@@ -66,14 +79,39 @@ function Nav() {
                 delay: 1
             })
 
+            gsap.to(iconToggleOff, {
+                opacity: 0,
+                duration: 0.8,
+            })
+
+            gsap.fromTo(iconToggleOn, {
+                opacity: 0,
+            }, {
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.4
+            })
+        }
+    }
+    const toggleNav = (toggle) => {
+        if (toggle) {
+            console.log('toggle on')
+
+            toggleAnimation("entrance")
+
+            setToggle(true)
+        } else {
+            console.log('toggle off')
+
+            toggleAnimation("exit")
+
             setToggle(false)
         }
     }
 
     useEffect(() => {
         gsap.set(wrapper.current, {
-            opacity: 0,
-            height: 0
+            opacity: 0
         })
     }, [])
 
@@ -117,7 +155,7 @@ function Nav() {
                     </div>
                 </div>
             </div>
-            <div className="nav-toggle-icon">
+            <div className="nav-toggle-icon"  ref={iconToggle}>
                 <div className="toggle-on" hidden={toggle ? true : false}>
                     <svg
                         onClick={() => toggleNav(true)}
