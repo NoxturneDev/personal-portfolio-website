@@ -9,30 +9,71 @@ import Sphere from './Sphere'
 function Nav() {
     const [toggle, setToggle] = useState(false)
     const wrapper = useRef(null)
+    const links = useRef(null)
 
     const toggleNav = (toggle) => {
-        if (!toggle) {
-            console.log('toggle off')
-            gsap.to(wrapper.current, {
+        if (toggle) {
+            console.log('toggle on')
+
+            gsap.fromTo(wrapper.current, {
                 opacity: 0,
-                xPercent: -100
+                height: 0,
+                width: 0,
+                borderBottomRightRadius: '100%'
+            }, {
+                opacity: 1,
+                height: '100vh',
+                width: '100vw',
+                borderBottomRightRadius: 0
+            })
+
+            gsap.fromTo(links.current.children, {
+                opacity: 0,
+                y: -50,
+            }, {
+                opacity: 1,
+                y: 0,
+                delay: 1,
+                stagger: {
+                    from: "start",
+                    each: 0.2
+                }
+            })
+
+            setToggle(true)
+        } else {
+            console.log('toggle off')
+
+            gsap.to(links.current.children, {
+                opacity: 0,
+                y: -50,
+                stagger: {
+                    from: "start",
+                    each: 0.2
+                }
+            })
+
+            gsap.fromTo(wrapper.current, {
+                opacity: 1,
+                height: '100vh',
+                width: '100vw',
+                borderBottomRightRadius: 0
+            }, {
+                opacity: 0,
+                height: 0,
+                width: 0,
+                borderBottomRightRadius: '100%',
+                delay: 1
             })
 
             setToggle(false)
-        } else {
-            console.log('toggle on')
-            gsap.to(wrapper.current, {
-                opacity: 1,
-                xPercent: 0
-            })
-            setToggle(true)
         }
     }
 
     useEffect(() => {
         gsap.set(wrapper.current, {
             opacity: 0,
-            xPercent: -100
+            height: 0
         })
     }, [])
 
@@ -47,7 +88,7 @@ function Nav() {
                 </div>
                 <div className="nav-section-wrapper container-flex">
                     <div className="nav-links-section">
-                        <ul>
+                        <ul ref={links}>
                             <motion.li
                                 className="nav-links"
                                 whileHover={{ x: 20, letterSpacing: '5px' }}
