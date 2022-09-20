@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { NavIcon } from './Icons'
 
 function PageHeader({ children: text = "HEADER" }) {
     return (
@@ -20,9 +19,6 @@ function PageHeader({ children: text = "HEADER" }) {
             >
                 {text}
             </motion.h1>
-            <div className='nav-icon'>
-                <NavIcon />
-            </div>
         </motion.div>
     )
 }

@@ -264,10 +264,6 @@ h2 {
 .page-wrapper .page-header .header {
   cursor: pointer;
 }
-.page-wrapper .page-header .nav-icon {
-  flex-grow: 1;
-  text-align: right;
-}
 .page-wrapper .page-content {
   width: 100%;
   flex-grow: 1;
@@ -301,6 +297,15 @@ h2 {
   border-radius: 2px;
   background-color: #161616;
   color: #161616;
+}
+
+.nav-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 90;
 }
 
 .nav-container {
@@ -355,6 +360,18 @@ h2 {
 }
 .nav-section-wrapper .nav-links-section ul .nav-links a {
   color: #ECE8E1;
+}
+
+.nav-toggle-icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: right;
+  padding: 2em;
+}
+.nav-toggle-icon * {
+  margin-left: 1em;
+  cursor: pointer;
 }
 
 .scroll-wrapper {
