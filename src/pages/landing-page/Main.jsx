@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
+import gsap, { wrap } from 'gsap'
 import PageWrapper from '../../components/PageWrapper'
 import { textAnimation } from '../../animation/gsapAnimation'
 import Nav from '../../components/Nav'
@@ -8,46 +8,39 @@ function Main() {
   const wrapper = useRef(null)
   const text = useRef(null)
 
+  let snap = false
+  const snapAnimation = (x) => {
+    if (snap) {
+      gsap.to(wrapper.current, {
+        scrollLeft: x,
+        duration: 1,
+        onComplete: () => {
+          snap = false
+
+          console.log('snap')
+        }
+      })
+    } else return
+  }
+
   const snapScroll = (e) => {
     const y = e.deltaY
-    // offset = wrapper.current.offsetWidth / 4
-
-    wrapper.current.scrollLeft += (y / 5)
+    const offsetX = [wrapper.current.firstChild.offsetLeft, wrapper.current.lastChild.offsetLeft]
 
     // wheel down
-    // if (y === 100 && canScroll) {
-    //   // snap next
-    //   canScroll = false
-    //   console.log(i)
+    if (y === -100) {
+      // snap next
+      snap = true
+      snapAnimation(offsetX[0])
+    }
 
-    //   gsap.to(wrapper.current, {
-    //     x: i > 0 ? i * -offset : -offset,
-    //     duration: 2,
-    //     onComplete: () => {
-    //       console.log(i)
-    //       canScroll = true
-    //       i++
-    //     }
-    //   })
-    // }
+    if (y === 100) {
+      // snap previous
+      snap = true
+      snapAnimation(offsetX[1])
+    }
 
-    // if (y === -100 && canScroll) {
-    //   // snap previous
-    //   gsap.to(wrapper.current, {
-    //     x: -i * offset,
-    //     duration: 2,
-    //     onStart: () => {
-    //       console.log(i)
-    //       canScroll = false
-    //     },
-    //     onComplete: () => {
-    //       console.log(i)
-    //       canScroll = true
-    //       i--
-    //     }
-    //   })
-    // }
-
+    wrapper.current.scrollLeft += (y / 5)
   }
 
   useEffect(() => {
