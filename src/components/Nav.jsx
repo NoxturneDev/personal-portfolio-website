@@ -8,6 +8,7 @@ import Sphere from './Sphere'
 
 function Nav() {
     const [toggle, setToggle] = useState(false)
+    const [animate, setAnimate] = useState(true)
     const wrapper = useRef(null)
     const links = useRef(null)
     const iconToggle = useRef(null)
@@ -16,7 +17,9 @@ function Nav() {
         const iconToggleOn = iconToggle.current.firstChild
         const iconToggleOff = iconToggle.current.lastChild
 
-        if (state === "entrance") {
+        if (state === "entrance" && animate) {
+            setAnimate(false)
+            console.log(animate)
             // WRAPPER ANIMATION
             gsap.fromTo(wrapper.current, {
                 opacity: 0,
@@ -51,10 +54,14 @@ function Nav() {
             }, {
                 opacity: 1,
                 duration: 0.8,
-                delay: 0.4
+                delay: 0.4,
+                onComplete: () => {
+                    setAnimate(true)
+                }
             })
+        } else if (state === "exit" && animate) {
+            setAnimate(false)
 
-        } else if (state === "exit") {
             // LINK ANIMATION
             gsap.to(links.current.children, {
                 opacity: 0,
@@ -89,7 +96,10 @@ function Nav() {
             }, {
                 opacity: 1,
                 duration: 0.8,
-                delay: 0.4
+                delay: 0.4,
+                onComplete: () => {
+                    setAnimate(true)
+                }
             })
         }
     }
@@ -155,20 +165,22 @@ function Nav() {
                     </div>
                 </div>
             </div>
-            <div className="nav-toggle-icon"  ref={iconToggle}>
+            <div className="nav-toggle-icon" ref={iconToggle}>
                 <div className="toggle-on" hidden={toggle ? true : false}>
-                    <svg
-                        onClick={() => toggleNav(true)}
-                        width="29" height="14" viewBox="0 0 24 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.903992 1.07999H23.0707M0.903992 8.37036H23.0707" stroke="#161616" strokeLinecap="round" />
-                    </svg>
+                    <button onClick={() => toggleNav(true)} disabled={animate ? false : true}>
+                        <svg
+                            width="29" height="14" viewBox="0 0 24 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.903992 1.07999H23.0707M0.903992 8.37036H23.0707" stroke="#161616" strokeLinecap="round" />
+                        </svg>
+                    </button>
                 </div>
                 <div className="toggle-off" hidden={toggle ? false : true}>
-                    <svg
-                        onClick={() => toggleNav(false)}
-                        width="29" height="14" viewBox="0 0 24 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.903992 1.07999H23.0707M0.903992 8.37036H23.0707" stroke="#FFFFFF" strokeLinecap="round" />
-                    </svg>
+                    <button onClick={() => toggleNav(false)} disabled={animate ? false : true}>
+                        <svg
+                            width="29" height="14" viewBox="0 0 24 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.903992 1.07999H23.0707M0.903992 8.37036H23.0707" stroke="#FFFFFF" strokeLinecap="round" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
