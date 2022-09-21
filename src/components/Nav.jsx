@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { Link } from 'react-router-dom'
-import { NavIcon } from './Icons'
 import Sphere from './Sphere'
+import PageHeader from './PageHeader'
 
 
-function Nav() {
+
+function Nav({ page }) {
     const [toggle, setToggle] = useState(false)
     const [animate, setAnimate] = useState(true)
     const wrapper = useRef(null)
@@ -119,15 +120,9 @@ function Nav() {
         }
     }
 
-    useEffect(() => {
-        gsap.set(wrapper.current, {
-            opacity: 0
-        })
-    }, [])
-
     return (
-
         <div className='nav-wrapper'>
+            <PageHeader>{page}</PageHeader>
             <div className='nav-container container-flex-col' ref={wrapper}>
                 <div className="nav-header">
                     <div className="header">

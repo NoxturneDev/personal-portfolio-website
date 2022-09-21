@@ -8,17 +8,6 @@
         margin: 0.5em;
     }
 
-    .page-header {
-        @include flex(flex-start, center);
-
-        width: 100%;
-        padding: 0 3em;
-
-        .header{
-            cursor: pointer;
-        }
-    }
-
     .page-content {
         width: 100%;
         flex-grow: 1;
