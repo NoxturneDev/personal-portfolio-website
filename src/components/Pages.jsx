@@ -39,7 +39,7 @@ function Pages({ children }) {
         }
 
         gsap.to(wrapper.current, {
-            scrollLeft: pageIndex === 0 ? x : x * pageIndex,
+            scrollLeft: pageIndex === 0 ? 0 : x * pageIndex,
             duration: 1.2,
             ease: "sine.out",
             onComplete: () => {
@@ -48,6 +48,7 @@ function Pages({ children }) {
         })
 
         setPage(children[pageIndex].dataset.page)
+        console.log(x * pageIndex)
         return
     }
 
@@ -61,15 +62,16 @@ function Pages({ children }) {
         const y = e.deltaY,
             offset = wrapper.current.children[0].offsetWidth
 
-        console.log(offset)
-
         // snap previous
         if (y === -100 && canScroll) {
 
+            if(pageIndex <= 0) return
             canScroll = false
 
             pageIndex--
             snapAnimation(offset, "prev")
+            console.log(pageIndex)
+
 
             return
 
@@ -78,17 +80,16 @@ function Pages({ children }) {
         // snap next
         if (y === 100 && canScroll) {
 
+            if(pageIndex >= 2) return
             canScroll = false
 
             pageIndex++
             snapAnimation(offset, "next")
+            console.log(pageIndex)
 
             return
         }
 
-        console.log(pageIndex)
-
-        console.log(wrapper)
     }
 
     useEffect(() => {
