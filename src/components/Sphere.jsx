@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { Container } from './Container'
 
-function Sphere({ children, size = 400}) {
+function Sphere({ children, size = 400, dark = "true"}) {
     const [deg, setDeg] = useState(70)
     const sphere = useRef(null)
 
@@ -24,7 +24,7 @@ function Sphere({ children, size = 400}) {
     return (
         <div
             ref={sphere}
-            className="sphere"
+            className={`sphere ${dark == "true" ? 'background-radial-dark' : 'background-radial-light'}`}
         >
             {children}
         </div>

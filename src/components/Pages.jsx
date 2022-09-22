@@ -86,6 +86,8 @@ function Pages({ children }) {
             return
         }
 
+        console.log(pageIndex)
+
         console.log(wrapper)
     }
 
