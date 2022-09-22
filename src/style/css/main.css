@@ -239,10 +239,17 @@ h2 {
 }
 
 .sphere {
-  background: radial-gradient(circle, #1E1E1E, #111111);
   width: 400px;
   height: 400px;
   border-radius: 100%;
+}
+
+.background-radial-dark {
+  background: radial-gradient(circle, #1E1E1E, #111111);
+}
+
+.background-radial-light {
+  background: radial-gradient(circle, #FBF8F3, #F2EEE8);
 }
 
 .page-wrapper {

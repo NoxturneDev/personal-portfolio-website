@@ -9,8 +9,8 @@ $light-300: #ECE8E1;
 $light-400: #D8D4CD;
 
 // GRADIENT COLOR
-$gradient-light: radial-gradient(circle, $light-100, $light-200);
-$gradient-dark: radial-gradient(circle, $dark-200, $dark-400);
+$radial-light: radial-gradient(circle, $light-100, $light-200);
+$radial-dark: radial-gradient(circle, $dark-200, $dark-400);
 
 
 // CSS BREAKPOINT 
