@@ -11,33 +11,36 @@ function Main() {
     pageIndex = 0 //started index at 0
 
   const snapAnimation = (x, position) => {
+
+    const {current} = wrapper,
+    children = current.children
   
-    if(position === "next" && pageIndex <= 2) {
-      gsap.fromTo(wrapper.current.children[pageIndex], {
+    const childAnimation = (target, direction) => {
+      gsap.fromTo(target, {
         opacity: 0,
-        x: 100
+        x: direction
       }, {
         opacity: 1,
         x: 0,
         duration: 1.2,
-        ease: 'power2.out'
+        ease: 'power2.out',
+        stagger: {
+          from: "start",
+          each: 0.3
+        }
       })
     }
 
+    if(position === "next" && pageIndex <= 2) {
+      childAnimation(children[pageIndex].children, 100)
+    }
+
     if(position === "prev" && pageIndex >= 0) {
-      gsap.fromTo(wrapper.current.children[pageIndex], {
-        opacity: 0,
-        x: -100
-      }, {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        ease: 'power2.out'
-      })
+      childAnimation(children[pageIndex].children, -100)
     }
    
     gsap.to(wrapper.current, {
-      scrollLeft: pageDetection === 0 ? x : x * pageIndex,
+      scrollLeft: pageIndex === 0 ? x : x * pageIndex,
       duration: 1.2,
       ease: "sine.out",
       onComplete: () => {
@@ -45,7 +48,7 @@ function Main() {
       }
     })
 
-    console.log(x * pageIndex)
+    setPage(children[pageIndex].dataset.page)
     return
   }
 
@@ -56,7 +59,10 @@ function Main() {
   }
 
   const snapScroll = (e) => {
-    const y = e.deltaY
+    const y = e.deltaY,
+    offset = wrapper.current.children[0].offsetWidth
+
+    console.log(offset)
 
     // snap previous
     if (y === -100 && canScroll) {
@@ -64,7 +70,7 @@ function Main() {
       canScroll = false
     
       pageIndex--
-      snapAnimation(1360, "prev")
+      snapAnimation(offset, "prev")
 
       return
 
@@ -76,12 +82,12 @@ function Main() {
       canScroll = false
 
       pageIndex++
-      snapAnimation(1360, "next")
+      snapAnimation(offset, "next")
       
       return
     }
 
-    wrapper.current.scrollLeft += (y / 5)
+    console.log(wrapper)
   }
 
   useEffect(() => {
@@ -106,9 +112,9 @@ function Main() {
         className="scroll-wrapper container-flex-l"
         ref={wrapper}
       >
-        <PageWrapper></PageWrapper>
-        <PageWrapper></PageWrapper>
-        <PageWrapper></PageWrapper>
+        <PageWrapper name="HOME" />
+        <PageWrapper name="ABOUT" />
+        <PageWrapper name="PROJECT" />
       </div>
     </>
   )
