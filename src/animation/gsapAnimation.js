@@ -11,7 +11,4 @@ export function textAnimation(target, { duration, type }) {
         opacity: 1,
         duration: duration
     })
-
-    console.log(target)
-    console.log(duration, type)
 }

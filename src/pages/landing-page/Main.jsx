@@ -1,57 +1,82 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import PageWrapper from '../../components/PageWrapper'
-import { textAnimation } from '../../animation/gsapAnimation'
 import Nav from '../../components/Nav'
 
 function Main() {
   const [page, setPage] = useState('')
   const wrapper = useRef(null)
-  const text = useRef(null)
 
-  let snap = false
+  let canScroll = true,
+    pageIndex = 1 //started index at 0
+
   const snapAnimation = (x) => {
-    if (snap) {
-      gsap.to(wrapper.current, {
-        scrollLeft: x,
-        duration: 1.2,
-        ease: "sine.out",
-        onComplete: () => {
-          snap = false
+    console.log('fired')
 
-          console.log('snap')
-        }
-      })
-    } else return
+    gsap.to(wrapper.current, {
+      scrollLeft: x * pageIndex,
+      duration: 1.2,
+      ease: "sine.out",
+      onComplete: () => {
+        canScroll = true
+      }
+    })
+
+    console.log(x * pageIndex)
+    return
+  }
+
+  const pageDetection = (position) => {
+
+
+
   }
 
   const snapScroll = (e) => {
-    const y = e.deltaY
-    const offsetX = [wrapper.current.firstChild.offsetLeft, wrapper.current.lastChild.offsetLeft]
+    const y = e.deltaY,
+    {current} = wrapper,
+    children = current.children 
 
-    // wheel down
-    if (y === -100) {
-      // snap next
-      snap = true
-      snapAnimation(offsetX[0])
-      setPage('HOME')
+    // snap previous
+    if (y === -100 && canScroll) {
+      console.log('you cant scroll')
+
+      pageIndex--
+      snapAnimation(1360)
+      canScroll = false
+
+      return
+
     }
 
-    if (y === 100) {
-      // snap previous
-      snap = true
-      snapAnimation(offsetX[1])
-      setPage('ABOUT')
+    // snap next
+    if (y === 100 && canScroll) {
+      console.log('you cant scroll')
+
+
+      snapAnimation(1360)
+      canScroll = false
+
+      if(pageIndex === 3){
+        pageIndex = 2
+      }
+      
+      pageIndex++
+      
+      return
     }
 
     wrapper.current.scrollLeft += (y / 5)
   }
 
   useEffect(() => {
-    textAnimation(text.current, { duration: 0.5, type: "fade-up" })
     setPage('HOME')
 
-    window.addEventListener('wheel', e => snapScroll(e))
+    window.addEventListener('wheel', e => {
+      if(!canScroll) return
+
+      snapScroll(e)
+    })
 
     return () => {
       window.removeEventListener('wheel', e => snapScroll(e))
@@ -66,6 +91,7 @@ function Main() {
         className="scroll-wrapper container-flex-l"
         ref={wrapper}
       >
+        <PageWrapper></PageWrapper>
         <PageWrapper></PageWrapper>
         <PageWrapper></PageWrapper>
       </div>
