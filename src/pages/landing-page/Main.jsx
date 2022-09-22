@@ -8,13 +8,36 @@ function Main() {
   const wrapper = useRef(null)
 
   let canScroll = true,
-    pageIndex = 1 //started index at 0
+    pageIndex = 0 //started index at 0
 
-  const snapAnimation = (x) => {
-    console.log('fired')
+  const snapAnimation = (x, position) => {
+  
+    if(position === "next" && pageIndex <= 2) {
+      gsap.fromTo(wrapper.current.children[pageIndex], {
+        opacity: 0,
+        x: 100
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: 'power2.out'
+      })
+    }
 
+    if(position === "prev" && pageIndex >= 0) {
+      gsap.fromTo(wrapper.current.children[pageIndex], {
+        opacity: 0,
+        x: -100
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: 'power2.out'
+      })
+    }
+   
     gsap.to(wrapper.current, {
-      scrollLeft: x * pageIndex,
+      scrollLeft: pageDetection === 0 ? x : x * pageIndex,
       duration: 1.2,
       ease: "sine.out",
       onComplete: () => {
@@ -27,23 +50,21 @@ function Main() {
   }
 
   const pageDetection = (position) => {
-
+    // write better snap using detection in this function
 
 
   }
 
   const snapScroll = (e) => {
-    const y = e.deltaY,
-    {current} = wrapper,
-    children = current.children 
+    const y = e.deltaY
 
     // snap previous
     if (y === -100 && canScroll) {
-      console.log('you cant scroll')
-
-      pageIndex--
-      snapAnimation(1360)
+      
       canScroll = false
+    
+      pageIndex--
+      snapAnimation(1360, "prev")
 
       return
 
@@ -51,17 +72,11 @@ function Main() {
 
     // snap next
     if (y === 100 && canScroll) {
-      console.log('you cant scroll')
 
-
-      snapAnimation(1360)
       canScroll = false
 
-      if(pageIndex === 3){
-        pageIndex = 2
-      }
-      
       pageIndex++
+      snapAnimation(1360, "next")
       
       return
     }
