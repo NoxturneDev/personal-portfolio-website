@@ -156,7 +156,7 @@ function Nav({ page }) {
                         </ul>
                     </div>
                     <div className="nav-sphere-section">
-                        <Sphere />
+                        <Sphere dark="false" />
                     </div>
                 </div>
             </div>
