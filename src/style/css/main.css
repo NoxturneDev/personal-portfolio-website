@@ -308,9 +308,13 @@ h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
   width: 100%;
   padding: 2em 3em;
   position: absolute;
+}
+.nav-wrapper .page-header::after {
+  content: "";
 }
 .nav-wrapper .page-header .header {
   cursor: pointer;

@@ -21,7 +21,7 @@ function Pages({ children }) {
             }, {
                 opacity: 1,
                 x: 0,
-                duration: 1.2,
+                duration: 1.5,
                 ease: 'power2.out',
                 stagger: {
                     from: "start",
@@ -40,7 +40,7 @@ function Pages({ children }) {
 
         gsap.to(wrapper.current, {
             scrollLeft: pageIndex === 0 ? 0 : x * pageIndex,
-            duration: 1.2,
+            duration: 0.9,
             ease: "sine.out",
             onComplete: () => {
                 canScroll = true
