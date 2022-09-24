@@ -120,6 +120,13 @@ function Nav({ page }) {
         }
     }
 
+
+    useEffect(() => {
+        gsap.set(wrapper.current, {
+            height: 0
+        })
+    }, [])
+
     return (
         <div className='nav-wrapper'>
             <PageHeader>{page}</PageHeader>
