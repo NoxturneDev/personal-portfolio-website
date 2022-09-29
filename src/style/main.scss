@@ -2,11 +2,7 @@
 @import "base/base";
 @import "base/mixin";
 @import "base/thypography";
+@import "base/layout";
 
-@import "layout/layout";
-
-@import "components/sphere";
-@import "components/pages-component";
-@import "components/nav";
-
-@import "pages/landing-page";
+@import "../components/component";
+@import "../pages/landing-page/landing-page";
