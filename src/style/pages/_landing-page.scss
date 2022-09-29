@@ -3,6 +3,10 @@
     width: 100vw;
     height: 100vh;
     overflow-x: scroll;
+
+    * {
+        border: $debug;
+    }
 }
 
 
@@ -38,4 +42,39 @@
     .sphere {
         margin-right: 4em;
     }
+}
+
+
+// ABOUT PAGE 
+.about-page-content {
+    @include flex(center, center);
+    overflow: hidden;
+
+    .about-text-wrapper {
+        padding: 1em 2em;
+
+        .btn-overlay-toggle {
+            z-index: 999;
+            background-color: red;
+            cursor: pointer;
+        }
+    }
+
+    // overlay
+    .about-overlay {
+        // opacity: 0;
+        top: -100%;
+        position: absolute;
+        background: $dark-300;
+        min-width: 100vw;
+        min-height: 100vh;
+        z-index: 99;
+
+        .btn-overlay-toggle {
+            z-index: 999;
+            background-color: blue;
+            cursor: pointer;
+        }
+    }
+
 }

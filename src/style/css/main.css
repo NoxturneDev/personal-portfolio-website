@@ -313,11 +313,14 @@ h2 {
   padding: 2em 3em;
   position: absolute;
 }
-.nav-wrapper .page-header::after {
-  content: "";
-}
 .nav-wrapper .page-header .header {
   cursor: pointer;
+}
+.nav-wrapper .page-header .header::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: red;
 }
 
 .nav-container {
@@ -345,6 +348,7 @@ h2 {
 .nav-section-wrapper {
   flex-grow: 1;
   width: 100%;
+  display: none;
 }
 .nav-section-wrapper .nav-sphere-section {
   display: flex;
@@ -397,6 +401,9 @@ h2 {
   height: 100vh;
   overflow-x: scroll;
 }
+.scroll-wrapper * {
+  border: 1px solid red;
+}
 
 .welcome-page-content {
   display: flex;
@@ -431,4 +438,32 @@ h2 {
 }
 .welcome-page-content .sphere {
   margin-right: 4em;
+}
+
+.about-page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.about-page-content .about-text-wrapper {
+  padding: 1em 2em;
+}
+.about-page-content .about-text-wrapper .btn-overlay-toggle {
+  z-index: 999;
+  background-color: red;
+  cursor: pointer;
+}
+.about-page-content .about-overlay {
+  top: -100%;
+  position: absolute;
+  background: #161616;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 99;
+}
+.about-page-content .about-overlay .btn-overlay-toggle {
+  z-index: 999;
+  background-color: blue;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

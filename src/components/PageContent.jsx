@@ -1,34 +1,13 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { fade } from '../animation/motionVariants'
-import Sphere from './Sphere'
+import PageFooter from './PageFooter'
 
-function PageContent() {
+function PageContent({ children: content, name, pageClass }) {
     return (
-        <div className="page-content welcome-page-content">
-            <div className="title-wrapper">
-                <motion.h1
-                    className='welcome-page-title container-flex'
-                    variants={fade[0]}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    transition={{ duration: 1, type: 'tween', ease: "easeOut" }}
-                >
-                    Hi, Welcome !
-                </motion.h1>
-                <motion.h1
-                    className='welcome-page-subtitle container-flex'
-                    variants={fade[0]}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    transition={{ duration: 0.8, type: 'tween', delay: 0.1, ease: "easeIn" }}
-                >
-                    My name is Galih Adhi Kusuma
-                </motion.h1>
+        <div className="container-flex-col page-wrapper" data-page={name}>
+            <div className={`page-content ${pageClass}`}>
+                {content}
             </div>
-            <Sphere />
+            <PageFooter></PageFooter>
         </div>
     )
 }

@@ -104,6 +104,7 @@ function Nav({ page }) {
             })
         }
     }
+        
     const toggleNav = (toggle) => {
         if (toggle) {
             console.log('toggle on')

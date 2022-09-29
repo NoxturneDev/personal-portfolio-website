@@ -53,6 +53,8 @@
 .nav-section-wrapper {
     flex-grow: 1;
     width: 100%;
+    display: none;
+
 
     .nav-sphere-section {
         @include flex(center, center);
