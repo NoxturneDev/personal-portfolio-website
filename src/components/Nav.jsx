@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { Link } from 'react-router-dom'
 import Sphere from './Sphere'
-import PageHeader from './PageHeader'
+import PageHeader from './NavHeader'
 
 
 

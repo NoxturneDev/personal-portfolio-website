@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 
-function PageFooter() {
+function Footer() {
     const line = useRef(null)
 
     const animateLine = () => {
@@ -45,4 +45,4 @@ function PageFooter() {
     )
 }
 
-export default PageFooter
+export default Footer

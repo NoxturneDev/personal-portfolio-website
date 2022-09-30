@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-function PageHeader({ children: text = "HEADER" }) {
+function NavHeader({ children: text = "HEADER" }) {
     return (
         <AnimatePresence wait>
             <motion.div
@@ -21,4 +21,4 @@ function PageHeader({ children: text = "HEADER" }) {
 }
 
 
-export default PageHeader
+export default NavHeader

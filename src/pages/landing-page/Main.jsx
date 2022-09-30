@@ -3,8 +3,7 @@ import { motion } from 'framer-motion'
 import { fade } from '../../animation/motionVariants'
 import Sphere from '../../components/Sphere'
 import ScrollWrapper from '../../components/ScrollWrapper'
-import PageContent from '../../components/PageContent'
-import PageFooter from '../../components/PageFooter'
+import Footer from '../../components/Footer'
 import AboutOverlay from './AboutOverlay'
 import { useEffect } from 'react'
 
@@ -49,7 +48,7 @@ function Main() {
           </div>
           <Sphere />
         </div>
-        <PageFooter />
+        <Footer />
       </div>
 
       <div className="container-flex-col page-wrapper" data-page="HOME">
@@ -70,7 +69,7 @@ function Main() {
             </div>
           </div>
         </div>
-        <PageFooter />
+        <Footer />
       </div>
     </ScrollWrapper>
   )
