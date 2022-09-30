@@ -1,0 +1,48 @@
+.scroll-wrapper {
+    background-color: $light-100;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+
+    * {
+        border: $debug;
+    }
+}
+
+.page-header {
+    @include flex(flex-start, center);
+
+    overflow: hidden;
+    width: 100%;
+    padding: 2em 3em;
+    position: absolute;
+
+    .header {
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: red;
+        }
+    }
+}
+
+.page-wrapper {
+    min-width: 100vw;
+    height: 100%;
+    padding: 1em 0.5em;
+    background-color: $light-200;
+
+    * {
+        margin: 0.5em;
+    }
+
+    .page-content {
+        width: 100%;
+        flex-grow: 1;
+        padding: 0 2em;
+    }
+}
+

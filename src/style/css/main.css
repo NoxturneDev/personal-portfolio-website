@@ -238,6 +238,50 @@ h2 {
   max-height: 100vh;
 }
 
+.scroll-wrapper {
+  background-color: #FBF8F3;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+}
+.scroll-wrapper * {
+  border: 1px solid red;
+}
+
+.page-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 2em 3em;
+  position: absolute;
+}
+.page-header .header {
+  cursor: pointer;
+}
+.page-header .header::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
+.page-wrapper {
+  min-width: 100vw;
+  height: 100%;
+  padding: 1em 0.5em;
+  background-color: #F2EEE8;
+}
+.page-wrapper * {
+  margin: 0.5em;
+}
+.page-wrapper .page-content {
+  width: 100%;
+  flex-grow: 1;
+  padding: 0 2em;
+}
+
 .nav-wrapper {
   position: relative;
   top: 0;
@@ -319,60 +363,27 @@ h2 {
   outline: none;
 }
 
-.page-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-  padding: 2em 3em;
-  position: absolute;
-}
-.page-header .header {
-  cursor: pointer;
-}
-.page-header .header::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
-
-.page-wrapper {
-  min-width: 100vw;
-  height: 100%;
-  padding: 1em 0.5em;
-  background-color: #D8D4CD;
-}
-.page-wrapper * {
-  margin: 0.5em;
-}
-.page-wrapper .page-content {
-  width: 100%;
-  flex-grow: 1;
-  padding: 0 2em;
-}
-.page-wrapper .page-footer {
+.page-footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 0 15em 0 2em;
 }
-.page-wrapper .page-footer .footer-link {
+.page-footer .footer-link {
   font-weight: 400;
   flex-grow: 1;
 }
-.page-wrapper .page-footer .footer-link a {
+.page-footer .footer-link a {
   color: #161616;
   font-family: "Melodrama", sans-serif;
 }
-.page-wrapper .page-footer .next-page {
+.page-footer .next-page {
   font-size: 1.2rem;
   text-align: right;
   font-weight: 500;
 }
-.page-wrapper .page-footer .horizontal-line {
+.page-footer .horizontal-line {
   height: 3px;
   width: 100%;
   box-shadow: none;
@@ -394,16 +405,6 @@ h2 {
 
 .background-radial-light {
   background: radial-gradient(circle, #FBF8F3, #F2EEE8);
-}
-
-.scroll-wrapper {
-  background-color: #FBF8F3;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: scroll;
-}
-.scroll-wrapper * {
-  border: 1px solid red;
 }
 
 .welcome-page-content {

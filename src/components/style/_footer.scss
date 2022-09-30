@@ -1,0 +1,33 @@
+.page-footer {
+    @include flex(flex-start, center);
+
+    width: 100%;
+    padding: 0 15em 0 2em;
+
+    .footer-link {
+        font-weight: 400;
+        flex-grow: 1;
+
+        a {
+            color: $dark-300;
+            font-family: $melodrama;
+        }
+    }
+
+    .next-page {
+        font-size: 1.2rem;
+        text-align: right;
+        font-weight: 500;
+    }
+
+    // LINE BESIDE NEXT PAGE TEXT
+    .horizontal-line {
+        height: 3px;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid $dark-300;
+        border-radius: 2px;
+        background-color: $dark-300;
+        color: $dark-300;
+    }
+}
