@@ -53,25 +53,25 @@
     .about-text-wrapper {
         padding: 1em 2em;
 
-        .btn-overlay-toggle {
-            z-index: 999;
-            background-color: red;
+        #toggle-on {
+            z-index: 10;
+            background-color: green;
+            padding: 1em;
             cursor: pointer;
         }
     }
 
     // overlay
     .about-overlay {
-        // opacity: 0;
-        top: -100%;
         position: absolute;
         background: $dark-300;
         min-width: 100vw;
         min-height: 100vh;
-        z-index: 99;
+        z-index: 30;
 
-        .btn-overlay-toggle {
-            z-index: 999;
+        #toggle-off {
+            z-index: 20;
+            padding: 1em;
             background-color: blue;
             cursor: pointer;
         }

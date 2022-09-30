@@ -51,14 +51,12 @@ function AboutOverlay({ overlayState }) {
   }, [overlayState, closed])
 
   return (
-    <div ref={overlay}>
-      <div className='about-overlay'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum architecto deleniti cumque omnis debitis mollitia dolorum magnam, illum voluptatibus vero dignissimos nam facilis, repellendus temporibus iure ut exercitationem quo sit!</p>
-        <button onClick={() => {
-          setClosed(true)
-          overlayState(false)
-        }} className="btn-overlay-toggle" >EXIT!</button>
-      </div>
+    <div ref={overlay} className='about-overlay'>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum architecto deleniti cumque omnis debitis mollitia dolorum magnam, illum voluptatibus vero dignissimos nam facilis, repellendus temporibus iure ut exercitationem quo sit!</p>
+      <button onClick={() => {
+        setClosed(true)
+        overlayState(false)
+      }} className="btn-overlay-toggle" id="toggle-off">EXIT!</button>
     </div>
   )
 }

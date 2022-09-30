@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import Nav from './Nav'
 
-function Pages({ children }) {
+function ScrollWrapper({ children }) {
     const [page, setPage] = useState('')
     const wrapper = useRef(null)
 
@@ -120,4 +120,4 @@ function Pages({ children }) {
     )
 }
 
-export default Pages
+export default ScrollWrapper

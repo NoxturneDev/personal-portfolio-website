@@ -246,24 +246,6 @@ h2 {
   height: 100%;
   z-index: 90;
 }
-.nav-wrapper .page-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-  padding: 2em 3em;
-  position: absolute;
-}
-.nav-wrapper .page-header .header {
-  cursor: pointer;
-}
-.nav-wrapper .page-header .header::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
 
 .nav-container {
   position: absolute;
@@ -335,6 +317,25 @@ h2 {
   border: none;
   background: none;
   outline: none;
+}
+
+.page-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 2em 3em;
+  position: absolute;
+}
+.page-header .header {
+  cursor: pointer;
+}
+.page-header .header::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: red;
 }
 
 .page-wrapper {
@@ -449,21 +450,22 @@ h2 {
 .about-page-content .about-text-wrapper {
   padding: 1em 2em;
 }
-.about-page-content .about-text-wrapper .btn-overlay-toggle {
-  z-index: 999;
-  background-color: red;
+.about-page-content .about-text-wrapper #toggle-on {
+  z-index: 10;
+  background-color: green;
+  padding: 1em;
   cursor: pointer;
 }
 .about-page-content .about-overlay {
-  top: -100%;
   position: absolute;
   background: #161616;
   min-width: 100vw;
   min-height: 100vh;
-  z-index: 99;
+  z-index: 30;
 }
-.about-page-content .about-overlay .btn-overlay-toggle {
-  z-index: 999;
+.about-page-content .about-overlay #toggle-off {
+  z-index: 20;
+  padding: 1em;
   background-color: blue;
   cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
