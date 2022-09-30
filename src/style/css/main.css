@@ -75,24 +75,6 @@ h2 {
   }
 }
 
-.header {
-  font-size: 16px;
-  font-family: "Boska", sans-serif;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  color: #161616;
-}
-@media screen and (min-width: 400px) {
-  .header {
-    font-size: calc(16px + 6 * ((100vw - 400px) / 1000));
-  }
-}
-@media screen and (min-width: 1400px) {
-  .header {
-    font-size: 22px;
-  }
-}
-
 .container-flex {
   display: flex;
   justify-content: center;
@@ -248,25 +230,6 @@ h2 {
   border: 1px solid red;
 }
 
-.page-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-  padding: 2em 3em;
-  position: absolute;
-}
-.page-header .header {
-  cursor: pointer;
-}
-.page-header .header::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
-
 .page-wrapper {
   min-width: 100vw;
   height: 100%;
@@ -289,6 +252,7 @@ h2 {
   width: 100%;
   height: 100%;
   z-index: 90;
+  background-color: blue;
 }
 
 .nav-container {
@@ -405,6 +369,15 @@ h2 {
 
 .background-radial-light {
   background: radial-gradient(circle, #FBF8F3, #F2EEE8);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: 100%;
+  height: 10vh;
 }
 
 .welcome-page-content {

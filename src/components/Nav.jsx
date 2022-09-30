@@ -3,8 +3,7 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { Link } from 'react-router-dom'
 import Sphere from './Sphere'
-import PageHeader from './NavHeader'
-
+import Header from './Header'
 
 
 function Nav({ page }) {
@@ -130,7 +129,7 @@ function Nav({ page }) {
 
     return (
         <div className='nav-wrapper'>
-            <PageHeader>{page}</PageHeader>
+            <Header>{page}</Header>
             <div className='nav-container container-flex-col' ref={wrapper}>
                 <div className="nav-header">
                     <div className="header">

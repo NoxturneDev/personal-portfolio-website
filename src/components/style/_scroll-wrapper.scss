@@ -9,26 +9,6 @@
     }
 }
 
-.page-header {
-    @include flex(flex-start, center);
-
-    overflow: hidden;
-    width: 100%;
-    padding: 2em 3em;
-    position: absolute;
-
-    .header {
-        cursor: pointer;
-
-        &::after {
-            content: '';
-            height: 100%;
-            width: 100%;
-            background-color: red;
-        }
-    }
-}
-
 .page-wrapper {
     min-width: 100vw;
     height: 100%;

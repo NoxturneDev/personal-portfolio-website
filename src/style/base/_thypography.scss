@@ -55,13 +55,3 @@ h2 {
 @mixin customfont($min, $max) {
     @include fluidFont($min-vw, $max-vw, $min, $max)
 }
-
-// TYPHOGRAPHY CLASSES
-.header{
-    @include biggerfont();
-
-    font-family: $boska;
-    font-weight: 600;
-    letter-spacing: 1.2px; 
-    color: $dark-300;
-}

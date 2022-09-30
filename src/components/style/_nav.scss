@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     z-index: 90;
+    background-color: blue;
 }
 
 .nav-container {
@@ -29,6 +30,8 @@
         color: $light-200;
     }
 }
+
+
 
 .nav-section-wrapper {
     flex-grow: 1;
