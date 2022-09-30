@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import Nav from './Nav'
+import Menu from './Menu'
 
 function ScrollWrapper({ children }) {
     const [page, setPage] = useState('')
@@ -109,7 +109,7 @@ function ScrollWrapper({ children }) {
 
     return (
         <>
-            <Nav page={page} />
+            <Menu page={page} />
             <div
                 className="scroll-wrapper container-flex-l"
                 ref={wrapper}

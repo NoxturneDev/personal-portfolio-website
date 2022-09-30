@@ -245,17 +245,16 @@ h2 {
   padding: 0 2em;
 }
 
-.nav-wrapper {
+.menu-wrapper {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 90;
-  background-color: blue;
 }
 
-.nav-container {
+.menu-container {
   position: absolute;
   overflow: hidden;
   background-color: #161616;
@@ -265,39 +264,39 @@ h2 {
   opacity: 0;
 }
 
-.nav-header {
+.menu-header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 0 2em;
 }
-.nav-header .header {
+.menu-header .header {
   flex-grow: 1;
   color: #F2EEE8;
 }
 
-.nav-section-wrapper {
+.menu-section-wrapper {
   flex-grow: 1;
   width: 100%;
   display: none;
 }
-.nav-section-wrapper .nav-sphere-section {
+.menu-section-wrapper .menu-sphere-section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 50%;
 }
-.nav-section-wrapper .nav-links-section {
+.menu-section-wrapper .menu-links-section {
   flex-grow: 1;
 }
-.nav-section-wrapper .nav-links-section ul {
+.menu-section-wrapper .menu-links-section ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.nav-section-wrapper .nav-links-section ul .nav-links {
+.menu-section-wrapper .menu-links-section ul .menu-links {
   font-size: 5rem;
   font-family: "Melodrama", sans-serif;
   font-weight: bold;
@@ -307,21 +306,43 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
 }
-.nav-section-wrapper .nav-links-section ul .nav-links a {
+.menu-section-wrapper .menu-links-section ul .menu-links a {
   color: #ECE8E1;
 }
 
-.nav-toggle-icon {
+.menu-toggle-icon {
   position: absolute;
   right: 0;
   text-align: right;
-  padding: 2em;
+  padding: 1em 2em;
+  width: 100%;
+  background-color: green;
 }
-.nav-toggle-icon * {
+.menu-toggle-icon * {
   margin-left: 1em;
   cursor: pointer;
 }
-.nav-toggle-icon button {
+.menu-toggle-icon .toggle-on {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.menu-toggle-icon .toggle-on #btn-toggle-on {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.menu-toggle-icon button {
   border: none;
   background: none;
   outline: none;
@@ -371,7 +392,11 @@ h2 {
   background: radial-gradient(circle, #FBF8F3, #F2EEE8);
 }
 
-.header {
+.nav-container {
+  width: 100%;
+}
+
+.nav-title {
   display: flex;
   justify-content: center;
   align-items: center;
