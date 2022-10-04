@@ -1,74 +1,124 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import Menu from './Menu'
 
-/**
- * 
- * @param {String} children - components children
- * @param {String} custom - custom tailwind classes for the components
- * @param {Boolean} full - default : false, fullscreen size
- * @param {String} direction - default : row, values = [top, bot] 
- * @param {String} align - default : center, values [center, left, right, top, bot]
- * @returns react container components
- */
+function Container({ children }) {
+    const [page, setPage] = useState('')
+    const wrapper = useRef(null)
 
-const rowContainer = {
-    center: 'container-flex',
-    right: 'container-flex-r',
-    left: 'container-flex-l',
-    top: 'container-flex items-start',
-    bot: 'container-flex items-end'
-}
+    let canScroll = true,
+        pageIndex = 0 //started index at 0
 
-const colContainer = {
-    center: 'container-flex-col',
-    right: 'container-flex-col items-end',
-    left: 'container-flex-col items-start',
-    top: 'container-flex-col-t',
-    bot: 'container-flex-col-b'
-}
+    const snapAnimation = (x, position) => {
 
-function handleType(align, direction) {
-    switch (direction) {
-        case 'row': {
-            for (const al in rowContainer) {
-                if (align === al) {
-                    return rowContainer[al]
+        const { current } = wrapper,
+            children = current.children
+
+        const childAnimation = (target, direction) => {
+            gsap.fromTo(target, {
+                opacity: 0,
+                x: direction
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 1.5,
+                ease: 'power2.out',
+                stagger: {
+                    from: "start",
+                    each: 0.3
                 }
-            }
+            })
         }
-        case 'column': {
-            for (const al in colContainer) {
-                if (align === al) {
-                    return colContainer[al]
-                }
-            }
+
+        if (position === "next" && pageIndex <= 2) {
+            childAnimation(children[pageIndex].children, 100)
         }
+
+        if (position === "prev" && pageIndex >= 0) {
+            childAnimation(children[pageIndex].children, -100)
+        }
+
+        gsap.to(wrapper.current, {
+            scrollLeft: pageIndex === 0 ? 0 : x * pageIndex,
+            duration: 0.9,
+            ease: "sine.out",
+            onComplete: () => {
+                canScroll = true
+            }
+        })
+
+        setPage(children[pageIndex].dataset.page)
+        console.log(x * pageIndex)
+        return
     }
-}
+
+    const pageDetection = (position) => {
+        // write better snap using detection in this function
 
 
-export function Container({ children, customClass = '', full = false, align = 'center', direction = 'row' }) {
+    }
+
+    const snapScroll = (e) => {
+        const y = e.deltaY,
+            offset = wrapper.current.children[0].offsetWidth
+
+        // snap previous
+        if (y === -100 && canScroll) {
+
+            if (pageIndex <= 0) return
+            canScroll = false
+
+            pageIndex--
+            snapAnimation(offset, "prev")
+            console.log(pageIndex)
+
+
+            return
+
+        }
+
+        // snap next
+        if (y === 100 && canScroll) {
+
+            if (pageIndex >= 2) return
+            canScroll = false
+
+            pageIndex++
+            snapAnimation(offset, "next")
+            console.log(pageIndex)
+
+            return
+        }
+
+    }
+
+    useEffect(() => {
+        setPage('HOME')
+
+        window.addEventListener('wheel', e => {
+            if (!canScroll) return
+
+            snapScroll(e)
+        })
+
+        return () => {
+            window.removeEventListener('wheel', e => snapScroll(e))
+        }
+
+    }, [])
+
     return (
-        <div className={`px-4 ${handleType(align, direction)} ${full ? 'h-screen w-screen' : 'h-full w-full'} ${customClass}`}>
-            {children}
-        </div>
+        <>
+            {/* <Menu page={page} /> */}
+            <div
+                className="container"
+                ref={wrapper}
+            >
+                {/* CONTENT SECTION HERE */}
+                {children}
+            </div>
+        </>
     )
 }
 
-// WITHOUT PADDING, WIDTH AND HEIGHT ADJUST TO IT'S CHILDREN
-export function Wrapper({ children, customClass = '', align = 'center', direction = 'row' }) {
-    return (
-        <div className={`h-max w-max ${handleType(align, direction)} ${customClass}`}>
-            {children}
-        </div>
-    )
-}
-
-
-export function Section({ children, customClass, align = "center", direction}) {
-    return (
-        <Container full={true} direction={direction} align={align} customClass={`${customClass}`}>
-            {children}
-        </Container>
-    )
-}
-
+export default Container

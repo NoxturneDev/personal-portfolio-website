@@ -75,152 +75,7 @@ h2 {
   }
 }
 
-.container-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-r {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-l {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-t {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-b {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-col-r {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-col-l {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-col-t {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.container-flex-col-b {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  max-height: 100vh;
-}
-
-.scroll-wrapper {
+.container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -229,26 +84,17 @@ h2 {
   height: 100vh;
   overflow-x: scroll;
 }
-.scroll-wrapper * {
-  border: 1px solid red;
-}
-.scroll-wrapper .content-wrapper {
+.container .sections {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-width: 100vw;
   height: 100%;
   padding: 1em 0.5em;
-  background-color: #F2EEE8;
 }
-.scroll-wrapper .content-wrapper * {
+.container .sections * {
   margin: 0.5em;
-}
-.scroll-wrapper .content-wrapper .content {
-  width: 100%;
-  flex-grow: 1;
-  padding: 0 2em;
 }
 
 .menu-wrapper {
@@ -322,7 +168,6 @@ h2 {
   text-align: right;
   padding: 1em 2em;
   width: 100%;
-  background-color: green;
 }
 .menu-toggle-icon * {
   margin-left: 1em;
@@ -340,7 +185,6 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -406,71 +250,42 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
   width: 100%;
   height: 10vh;
 }
 
-.content-welcome {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.content-welcome .title-wrapper {
-  flex-grow: 1;
-}
-.content-welcome .title-wrapper .welcome-page-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 4.2rem;
-  font-family: "Melodrama", sans-serif;
-  font-weight: 400;
-  color: #161616;
-}
-.content-welcome .title-wrapper .welcome-page-subtitle {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 3.5rem;
-  flex-grow: 1;
-  font-family: "Melodrama", sans-serif;
-  font-weight: 200;
-  color: #161616;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-top: -0.5em;
-}
-.content-welcome .sphere {
-  margin-right: 4em;
-}
-
-.content-aboutme {
+.section-welcome {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
-.content-aboutme .about-text-wrapper {
-  padding: 1em 2em;
+.section-welcome .welcome-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 90%;
+  width: 100%;
 }
-.content-aboutme .about-text-wrapper #toggle-on {
-  z-index: 10;
-  background-color: green;
+.section-welcome .welcome-text-content .welcome-title {
+  font-family: "Melodrama", sans-serif;
+  font-size: 3rem;
+  color: #161616;
+  line-height: 1;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+}
+.section-welcome .welcome-text-content .welcome-subtitle {
+  font-family: "Melodrama", sans-serif;
+  font-size: 2.5rem;
+  color: #161616;
+  line-height: 1;
+  letter-spacing: 1.2px;
+  color: #1E1E1E;
+  font-weight: 400;
+}
+.section-welcome .welcome-graphic-content {
   padding: 1em;
-  cursor: pointer;
-}
-.content-aboutme .about-overlay {
-  position: absolute;
-  background: #161616;
-  min-width: 100vw;
-  min-height: 100vh;
-  z-index: 30;
-}
-.content-aboutme .about-overlay #toggle-off {
-  z-index: 20;
-  padding: 1em;
-  background-color: blue;
-  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

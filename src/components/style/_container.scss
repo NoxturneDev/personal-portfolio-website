@@ -1,0 +1,21 @@
+.container {
+    @include flex(flex-start, center);
+    
+    background-color: $light-100;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+
+    // Content section
+    .sections{
+        @include flexCol(center, center);
+        
+        min-width: 100vw;
+        height: 100%;
+        padding: 1em 0.5em;
+    
+        * {
+            margin: 0.5em;
+        }
+    }
+}

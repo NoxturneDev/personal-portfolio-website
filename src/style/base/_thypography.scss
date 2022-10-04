@@ -55,3 +55,11 @@ h2 {
 @mixin customfont($min, $max) {
     @include fluidFont($min-vw, $max-vw, $min, $max)
 }
+
+@mixin title($size){
+    font-family: $melodrama;
+    font-size: $size;
+    color: $dark-300;
+    line-height: 1;
+    letter-spacing: 1.2px;
+}

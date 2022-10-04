@@ -73,7 +73,6 @@
     text-align: right;
     padding: 1em 2em;
     width: 100%;
-    background-color: green;
 
     * {
         margin-left: 1em;
@@ -87,7 +86,6 @@
 
         #btn-toggle-on{
             @include flexCol(center, center);
-            background-color: red;
             width: fit-content;
             height: fit-content;
         }
