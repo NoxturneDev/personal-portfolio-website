@@ -109,7 +109,7 @@ function Container({ children }) {
 
     return (
         <>
-            {/* <Menu page={page} /> */}
+            <Menu page={page} />
             <div
                 className="container"
                 ref={wrapper}

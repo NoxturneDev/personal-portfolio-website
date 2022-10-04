@@ -7,17 +7,17 @@ import Footer from '../../components/Footer'
 import AboutOverlay from './AboutOverlay'
 
 function Main() {
-  // const [overlay, setOverlay] = useState(false)
+  const [overlay, setOverlay] = useState(false)
 
-  // const handleOverlay = (state) => {
-  //   if (state === false) {
-  //     setOverlay(false)
+  const handleOverlay = (state) => {
+    if (state === false) {
+      setOverlay(false)
 
-  //     console.log(overlay, state)
-  //   }
+      console.log(overlay, state)
+    }
 
-  //   return overlay
-  // }
+    return overlay
+  }
 
   return (
     <Container>
@@ -54,38 +54,13 @@ function Main() {
         <Footer />
       </div>
 
-      {/* <div className="content content-welcome">
-          <div className="title-wrapper">
-            <motion.h1
-              className='welcome-page-title container-flex'
-              variants={fade[0]}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              transition={{ duration: 1, type: 'tween', ease: "easeOut" }}
-            >
-              Hi, Welcome !
-            </motion.h1>
-            <motion.h1
-              className='welcome-page-subtitle container-flex'
-              variants={fade[0]}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              transition={{ duration: 0.8, type: 'tween', delay: 0.1, ease: "easeIn" }}
-            >
-              My name is Galih Adhi Kusuma
-            </motion.h1>
+      <div className="sections">
+        <div className="section-about">
+          <div className="about-graphic-content">
+            <Sphere />
           </div>
-          <Sphere />
-        </div> */}
-      {/* SCROLL SNAP CONTENT */}
-      {/* <div className="container-flex-col content-wrapper" data-page="HOME">
-        <AboutOverlay overlayState={handleOverlay} />
-        <div className="content content-aboutme">
-          <Sphere />
-          <div className="about-text-wrapper">
-            <div className="about-text-header header">
+          <div className="about-text-content">
+            <div className="about-title">
               About Me
             </div>
             <div className="about-text">
@@ -98,8 +73,7 @@ function Main() {
             </div>
           </div>
         </div>
-        <Footer />
-      </div> */}
+      </div>
     </Container>
   )
 }
