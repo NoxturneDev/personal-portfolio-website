@@ -111,7 +111,7 @@ function ScrollWrapper({ children }) {
         <>
             <Menu page={page} />
             <div
-                className="scroll-wrapper container-flex-l"
+                className="scroll-wrapper"
                 ref={wrapper}
             >
                 {children}

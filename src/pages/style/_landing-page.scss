@@ -1,4 +1,4 @@
-.welcome-page-content {
+.content-welcome {
     @include flex(flex-start, center);
 
     .title-wrapper {
@@ -34,7 +34,7 @@
 
 
 // ABOUT PAGE 
-.about-page-content {
+.content-aboutme {
     @include flex(center, center);
     overflow: hidden;
 

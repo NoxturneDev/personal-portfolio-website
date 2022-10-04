@@ -5,7 +5,6 @@ import Sphere from '../../components/Sphere'
 import ScrollWrapper from '../../components/ScrollWrapper'
 import Footer from '../../components/Footer'
 import AboutOverlay from './AboutOverlay'
-import { useEffect } from 'react'
 
 function Main() {
   const [overlay, setOverlay] = useState(false)
@@ -22,8 +21,9 @@ function Main() {
 
   return (
     <ScrollWrapper>
-      <div className="container-flex-col page-wrapper" data-page="HOME">
-        <div className="page-content welcome-page-content">
+      {/* SCROLL SNAP CONTENT */}
+      <div className="landing-page-content-wrapper" data-page="HOME">
+        <div className="content content-welcome">
           <div className="title-wrapper">
             <motion.h1
               className='welcome-page-title container-flex'
@@ -51,9 +51,10 @@ function Main() {
         <Footer />
       </div>
 
-      <div className="container-flex-col page-wrapper" data-page="HOME">
+      {/* SCROLL SNAP CONTENT */}
+      <div className="container-flex-col content-wrapper" data-page="HOME">
         <AboutOverlay overlayState={handleOverlay} />
-        <div className="page-content about-page-content">
+        <div className="content content-aboutme">
           <Sphere />
           <div className="about-text-wrapper">
             <div className="about-text-header header">

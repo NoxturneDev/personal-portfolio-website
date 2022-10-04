@@ -1,4 +1,6 @@
 .scroll-wrapper {
+    @include flex(flex-start, center);
+    
     background-color: $light-100;
     width: 100vw;
     height: 100vh;
@@ -7,22 +9,24 @@
     * {
         border: $debug;
     }
-}
 
-.page-wrapper {
-    min-width: 100vw;
-    height: 100%;
-    padding: 1em 0.5em;
-    background-color: $light-200;
-
-    * {
-        margin: 0.5em;
+    // Content wrapper for each content
+    .content-wrapper{
+        @include flexCol(flex-start, center);
+        
+        min-width: 100vw;
+        height: 100%;
+        padding: 1em 0.5em;
+        background-color: $light-200;
+    
+        * {
+            margin: 0.5em;
+        }
+    
+        .content {
+            width: 100%;
+            flex-grow: 1;
+            padding: 0 2em;
+        }
     }
-
-    .page-content {
-        width: 100%;
-        flex-grow: 1;
-        padding: 0 2em;
-    }
 }
-
